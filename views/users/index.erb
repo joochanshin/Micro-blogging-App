@@ -1,0 +1,8 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<h2 class='hello'>List of all Users:</h2>
+
+<% @users.each do |u| %>
+<a href='/users/<%= u.id %>'><div><%= u.username %></div></a>
+<% end %>

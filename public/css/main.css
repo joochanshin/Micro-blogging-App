@@ -1,0 +1,13 @@
+.hello, .hello1 {
+  border: 2px dotted red;
+  background-color: lightblue; }
+
+.hello1 {
+  font-size: 2.25rem;
+  letter-spacing: 0.5rem; }
+
+.nav {
+  float: right;
+  margin-right: 20px; }
+
+/*# sourceMappingURL=main.css.map */
