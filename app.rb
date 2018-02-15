@@ -7,7 +7,7 @@ set :database, "sqlite3:development.sqlite3"
 set :sessions, true
 
 get '/' do 
-	@blogs = Blog.all
+	@blogs = Blog.all.last(10).sort_by { |r| r.id }.reverse
 	erb :home	
 end
 
@@ -27,6 +27,7 @@ end
 	
 get '/users/:id' do
 	@user = User.find(params[:id])
+	@blogs = Blog.all
 	erb :'users/show'
 end
 
@@ -36,7 +37,7 @@ post '/signin'  do
 if 
  user = User.where(username: @username, password: @password).first
 	session[:user_id] = user.id
-	# here for interpolation you always need to user double quotes
+
 	redirect "/users/#{user.id}"
 	else
 		redirect '/'
@@ -49,8 +50,8 @@ get '/users/:id/edit' do
 end
 
 
-post '/update_user' do
-	user = User.find(session[:user_id])
+post '/user/:id/update_user' do
+	user = User.find(params[:id])
 	user.update(username: params[:username], password: params[:password])	
 	redirect "/users/#{user.id}"
 end

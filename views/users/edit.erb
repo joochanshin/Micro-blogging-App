@@ -3,11 +3,14 @@
 </head>
 <h3 class='hello'>Edit form</h3>
 
-<form action='/update_user' method='post'>
+<form action='/user/<%= @user.id %>/update_user' method='post'>
 	<input type="text" name="username" placeholder='username'>
 	<input type="text" name="password" placeholder='password'>
 	<input type="submit" value="Update user">
 </form>
+
+<h3>Add a description about yourself</h3>
+
 
 <h3>Logout</h3>
 <form action='/logout' method='post'>

@@ -4,6 +4,12 @@
 	// animation: fadeIn 1s ease;
 }
 
+#logoWrapper{
+	margin-left: 100px;
+	margin-top: 25px;
+	position: absolute;
+}
+
 .hello1{
 	@extend .hello;
 	font-size: 2.25rem;
@@ -12,6 +18,7 @@
 
 .nav{
 	float: right;
+	margin-top: 10px;
 	margin-right: 20px;
 }
 
@@ -20,6 +27,26 @@
 	float: right;
 	border: 1px solid black;
 	height: 300px;
+}
+
+#boxxx{
+	width: 100px;
+	height: 100px;
+	background-color: lightgreen;
+	border: 1px solid black;
+}
+
+#by{
+	position: absolute;
+	margin-top: 150px;
+	font-size: 3.25rem;
+    letter-spacing: .5rem;
+	animation: fadeIn 5s ease;
+	animation: slideIn 1s forwards;
+}
+
+#userWrapper{
+	width: 75px;
 }
 
 .content{
@@ -33,4 +60,9 @@ body{
 @keyframes fadeIn {
 	from {opacity: 0;}
 	to {opacity: 1;}
+}
+
+@keyframes slideIn{
+	0%{transform: translateX(100px);}
+	100%{transform: translateX(500px);}
 }

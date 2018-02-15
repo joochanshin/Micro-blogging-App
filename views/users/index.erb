@@ -3,6 +3,8 @@
 </head>
 <h2 class='hello'>List of all Users:</h2>
 
-<% @users.each do |u| %>
-<a href='/users/<%= u.id %>'><div><%= u.username %></div></a>
-<% end %>
+<div id="userWrapper">
+	<% @users.each do |u| %>
+	<a href='/users/<%= u.id %>'><div><%= u.username %></div></a>
+	<% end %>
+</div>
