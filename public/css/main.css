@@ -10,4 +10,23 @@
   float: right;
   margin-right: 20px; }
 
+#wrapperHome {
+  padding: 10px;
+  float: right;
+  border: 1px solid black;
+  height: 300px; }
+
+.content {
+  height: 400px;
+  display: hidden; }
+
+body {
+  animation: fadeIn 1s ease; }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
 /*# sourceMappingURL=main.css.map */

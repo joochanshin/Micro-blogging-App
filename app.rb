@@ -62,20 +62,22 @@ get "/user/:id/delete_user" do
 end
 
 post '/logout' do
-	session[:user_id] = nil
+	session.clear
 	redirect "/"
 end
 
 
-post "/create_blog" do 
-	user = User.find(session[:user_id])	
-	Blog.create(title: params[:title], content: params[:content], user_id: user.id)
+post "/user/:id/create_blog" do 
+	@user = User.find(params[:id])	
+	Blog.create(title: params[:title], content: params[:content], user_id: @user.id)
 	redirect '/'
 end
 
 
 get '/blogs/:id' do
 	@blog = Blog.find(params[:id])
+	@blog.user_id
+	#@user = User.find(params[@blog.user_id])
 	erb :blog
 end
 

@@ -1,6 +1,7 @@
 .hello {
 	border: 2px dotted red;
 	background-color: lightblue;
+	// animation: fadeIn 1s ease;
 }
 
 .hello1{
@@ -12,4 +13,24 @@
 .nav{
 	float: right;
 	margin-right: 20px;
+}
+
+#wrapperHome{
+	padding: 10px;
+	float: right;
+	border: 1px solid black;
+	height: 300px;
+}
+
+.content{
+	height: 400px;
+	display: hidden;
+}
+body{
+	animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+	from {opacity: 0;}
+	to {opacity: 1;}
 }
